@@ -23,3 +23,5 @@ jobs:
 
       - name: Execute python script # run main.py
         run: python main.py
+        env:
+          SOME_SECRET: ${{ secrets.SOME_SECRET }}
