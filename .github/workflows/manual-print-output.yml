@@ -1,11 +1,9 @@
-name: Print output in text file
-
-run-name: Test
+name: Test Workflow
 
 on: workflow_dispatch # manually triggered to run
 
 jobs:
-  build:
+  run-script:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo content
@@ -17,9 +15,7 @@ jobs:
           python-version: '3.12' # install the python version needed
 
       - name: Install python packages
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Execute python script # run main.py
         run: python main.py
